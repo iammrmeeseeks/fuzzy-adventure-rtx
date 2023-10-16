@@ -3,9 +3,13 @@ import { useSelector } from 'react-redux';
 
 function Todos() {
 
-    // useSelector((state) => {state})
+    const todos = useSelector(state => state.todos)
   return (
-    <div>Todos</div>
+    <>
+        <div>Todos</div>
+        {todos.map((item) => (<div key={item.id}>{item.text}</div>))}
+    </>
+    
   )
 }
 
